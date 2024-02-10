@@ -8,25 +8,23 @@
 import SwiftUI
 
 public struct BottomSheetView<Content: View>: View {
-    @Binding var isOpen: Bool
-
     let maxHeight: CGFloat
     let minHeight: CGFloat
+    let offset: CGFloat
     let content: Content
     
     public var body: some View {
         content
-            .frame(maxWidth: .infinity, maxHeight: maxHeight)
-            .background(Color.white) // Adjust as needed
-            .cornerRadius(16) // Adjust as needed
-            .offset(y: isOpen ? 0 : maxHeight) // Adjust as needed
-            .animation(.default) // Adjust animation as needed
+            .frame(maxWidth: .infinity, maxHeight: maxHeight, alignment: .center)
+            .background(Color.blue)
+            .cornerRadius(16)
+            .offset(y: offset)
     }
     
-    public init(isOpen: Binding<Bool>, maxHeight: CGFloat, ratio: CGFloat, @ViewBuilder content: () -> Content) {
-        self.minHeight = maxHeight * ratio
+    public init(maxHeight: CGFloat, offset: CGFloat, @ViewBuilder content: () -> Content) {
+        self.minHeight = maxHeight
         self.maxHeight = maxHeight
+        self.offset = offset
         self.content = content()
-        self._isOpen = isOpen
     }
 }
