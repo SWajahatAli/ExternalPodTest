@@ -8,8 +8,8 @@
 import SwiftUI
 
 public struct BottomSheetView<Content: View>: View {
-    typealias Body = Never
-    var body: Never { fatalError() }
+    public typealias Body = Never
+    public var body: Never { fatalError() }
 
     @Binding var isOpen: Bool
 
@@ -17,7 +17,7 @@ public struct BottomSheetView<Content: View>: View {
     let minHeight: CGFloat
     let content: Content
 
-    init(isOpen: Binding<Bool>, maxHeight: CGFloat, ratio: CGFloat, @ViewBuilder content: () -> Content) {
+    public init(isOpen: Binding<Bool>, maxHeight: CGFloat, ratio: CGFloat, @ViewBuilder content: () -> Content) {
         self.minHeight = maxHeight * ratio
         self.maxHeight = maxHeight
         self.content = content()

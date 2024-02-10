@@ -10,7 +10,9 @@ import SwiftUI
 public struct FullScreenModalView: View {
     @Environment(\.presentationMode) var presentationMode
     
-    var body: some View {
+    public init() {}
+    
+    public var body: some View {
         VStack{
             Text("Presented full screen from SDK Directly")
                 .foregroundStyle(.white)
