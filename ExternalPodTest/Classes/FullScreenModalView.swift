@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct FullScreenModalView: View {
+public struct FullScreenModalView: View {
     @Environment(\.presentationMode) var presentationMode
     
     var body: some View {

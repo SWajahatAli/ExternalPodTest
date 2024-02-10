@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BottomSheetView<Content: View>: View {
+public struct BottomSheetView<Content: View>: View {
     typealias Body = Never
     var body: Never { fatalError() }
 
